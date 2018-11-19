@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Path Optimizer</title>
+</head>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/OptimisePathController.js"></script>
+<script src="js/app/OptimisePathService.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/app/app.css"/>
+<body ng-app="path">
+<hr/>
+<div class="container" ng-controller="OptimisePathController">
+    <div class="row">
+       Enter no of cities to be visited <br/> <input type="text" ng-model="pathDTO.numOfNodes" class="input-sm spacing"/>
+       <br/><br/> <label>Enter adjacency matrix which represents location of each city</label><br/> <textarea type="text" ng-model="pathDTO.adjacencyMatrix" class="input-sm spacing"></textarea>
+        <br/><br/><br/>
+        <button ng-click="optimisePath()" class="btn btn-sm btn-info">Get Optimal path and Optimal distance to cover each city</button>
+    </div>
+    <hr/>
+   		<label ng-if="pathDTO.optimalPath">Optimal Path between cities</label>
+        <p>{{pathDTO.optimalPath}}</p>
+   		<label ng-if="pathDTO.optimalTotalDistance">Optimal distance between cities</label>
+        <p>{{pathDTO.optimalTotalDistance}}</p>
+    </div>
+    <hr/>
+
+</body>
+</html>
