@@ -28,7 +28,7 @@ public class PathDTO {
 	}
 
 	public String getAdjacencyMatrix() {
-		return adjacencyMatrix;
+		return adjacencyMatrix
 	}
 
 	public String getOptimalPath() {
