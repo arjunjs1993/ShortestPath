@@ -1,10 +1,10 @@
 #!/bin/bash
 
-git_url=https://github.com/Vighi88/HPSE-Assessment.git
-clone_path=/root/Vignesh_Assessment
-pomxml_path=/root/Vignesh_Assessment/HPSE-Assessment/HPSE
-dockerfile_path=/root/Vignesh_Assessment/HPSE-Assessment
-dockerimage_name=vigneshhpse
+git_url=https://github.com/arjunjs1993/ShortestPath.git
+clone_path=/root/Arjun_SPT
+pomxml_path=/root/Arjun_SPT/HPSE
+dockerfile_path=/root/Arjun_SPT/HPSE
+dockerimage_name=arjunspt
 version=:v1
 
 echo "Inside App VM"
@@ -107,7 +107,7 @@ docker build -t $dockerimage_name$version .
 
 sleep 10
 
-echo "Running the Docker Image and making Services Up - You can aceess the application with http://your_vm_ip:8888/HPSE"
+echo "Running the Docker Image and making Services Up - You can aceess the application with http://your_vm_ip:8888/SPT"
 
 sleep 2
 nohup docker run -i --rm -p 8888:8080 $dockerimage_name$version &
